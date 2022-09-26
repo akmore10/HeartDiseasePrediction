@@ -1,11 +1,14 @@
 from flask import Flask,request,jsonify
 from LoadedModel import *
+from flask_cors import CORS
 import numpy as np
 import pandas as pd
 import json
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/resource', methods = ['POST'])
+
 def predict():
     requestData = request.json
     testData = []
@@ -35,6 +38,8 @@ def predict():
     }
 
     return json.dumps(result)
+
+    
 
 if __name__ == "__main__":
   app.run()
