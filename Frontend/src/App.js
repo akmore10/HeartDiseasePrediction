@@ -1,9 +1,10 @@
 import Header from './components/header'
-
+import BasicTextFields from './components/diseaseParameter'
 function App() {
   return (
     <div className="App">
-        <Header></Header>    
+          
+        <BasicTextFields></BasicTextFields>
     </div>
   );
 }
