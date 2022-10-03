@@ -6,26 +6,28 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import  Link  from '@mui/material/Link';
 
 const drawerWidth = 240;
 const navItems = ['Past Predictions','Predict Disease'];
 
 function DrawerAppBar(props) {
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const sendTo = (e) => {
+
+    window.location.href ="/"+ e.value;
+
+  }
+
+
   return (
+     
+
+
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+      <Toolbar>
           <Typography
             variant="h6"
             component="div"
@@ -35,9 +37,10 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+                <Button key={item} value={item} onClick = {(e)=>{sendTo(e.value)}} sx={{ color: '#fff' }}>
+                  {item}
+                </Button>
+              
             ))}
           </Box>
         </Toolbar>
