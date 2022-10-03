@@ -117,22 +117,22 @@ export default function DiseaseFormField() {
                       Results
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Logistic Regression  : {response["LogisticRegression"]}
+                        Logistic Regression  : {response["LogisticRegression"] === 1 ?"Yes" : "No"}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Random Forest : {response["RandomForset"]}
+                        Random Forest : {response["RandomForset"] === 1 ? "Yes" : "No"}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Decision Tree : {response["DecisionTree"]}
+                        Decision Tree : {response["DecisionTree"] === 1 ? "Yes" :"No"}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Gaussian Naive Bayes : {response["GaussianNaiveBayes"]}
+                        Gaussian Naive Bayes : {response["GaussianNaiveBayes"] === 1 ?"Yes" : "No"}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        SVM : {response["SVM"]}
+                        SVM : {response["SVM"] === 1 ? "Yes" : "No"}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        KNN : {response["KNN"]}
+                        KNN : {response["KNN"] === 1 ?"Yes" : "No"}
                     </Typography>
                   </Box>
                 </Modal>

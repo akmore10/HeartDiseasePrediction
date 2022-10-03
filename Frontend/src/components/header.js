@@ -9,14 +9,14 @@ import Button from '@mui/material/Button';
 import  Link  from '@mui/material/Link';
 
 const drawerWidth = 240;
-const navItems = ['Past Predictions','Predict Disease'];
+const navItems = ['Predict Disease'];
 
 function DrawerAppBar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const sendTo = (e) => {
 
-    window.location.href ="/"+ e.value;
+    window.location.href ="/"+ e.target.value;
 
   }
 
@@ -37,7 +37,7 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-                <Button key={item} value={item} onClick = {(e)=>{sendTo(e.value)}} sx={{ color: '#fff' }}>
+                <Button key={item} value={  item} onClick = {(e)=>{sendTo(e.target.value)}} sx={{ color: '#fff' }}>
                   {item}
                 </Button>
               
